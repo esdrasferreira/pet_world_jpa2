@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -28,6 +29,9 @@ public class Usuario {
     @Enumerated(EnumType.STRING)
     private Sexo sexo;
 
-
+ @ManyToMany@JoinTable(name = "usuario_pet",
+ joinColumns = @JoinColumn(name = "usuario_id"),
+ inverseJoinColumns = @JoinColumn(name = "pet_id"))
+  private List<Pet> petList;
 
 }

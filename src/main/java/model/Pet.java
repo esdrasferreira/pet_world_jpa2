@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -33,5 +34,7 @@ public class Pet {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    @ManyToMany(mappedBy = "petList")
+    private List<Usuario> usuarioList;
 
 }
