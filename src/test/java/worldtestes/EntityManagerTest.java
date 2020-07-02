@@ -15,9 +15,12 @@ public class EntityManagerTest {
 
     protected EntityManager entityManager;
 
+
+
     @BeforeClass
     public static void setUpBeforeClass(){
         entityManagerFactory = Persistence.createEntityManagerFactory("Petworld-PU");
+
     }
 
     @AfterClass
